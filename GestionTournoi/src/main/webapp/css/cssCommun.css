@@ -5,7 +5,7 @@ body{
 /*Jumbotron*/
 .jumbotron{
 
-	margin-top:125px;
+	margin-top:70px;
 	padding: auto;
 	background-color: #00503C;
 	border-radius: 5px;
@@ -13,7 +13,7 @@ body{
 }
 
 .table{
-	margin-top: 125px;
+	margin-top: 70px;
 }
 
 .lst{
@@ -125,3 +125,42 @@ body{
 	color:white;
 }
 
+/*bouton sauvegarde*/
+
+.btnSave{
+	
+	background-color:#D35220;
+	border-color:white;
+	
+}
+
+
+/*table*/
+
+.table tr:hover{
+	
+	background-color:#D35220;
+	color:white;
+}
+
+
+
+/*home panel*/
+
+.homePanel{
+	
+	margin-top:20px;
+}
+
+.linkEntete {
+	
+	
+    text-decoration: none;
+    text-align:center;
+	color:#D35220;
+}
+
+.linkEntete:hover,.linkEntete:active,.linkEntete:focus,.linkEntete.visited {
+    text-decoration: none;
+	color:#D35220;
+}

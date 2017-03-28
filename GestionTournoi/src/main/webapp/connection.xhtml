@@ -32,17 +32,24 @@
 					<h:form class="formConnexion">
 						<div class="form-group">
 							<h:outputLabel>PSEUDO</h:outputLabel>
-							<h:inputText id="nom"
-								class="form-control" placeholder="Saisir votre pseudo"></h:inputText>
+							<h:inputText id="pseudo" required="true" value="#{connectionController.pseudo}"
+								class="form-control" placeholder="Saisir votre pseudo">
+								<f:validateRegex pattern="[a-zA-Z]+" />
+							</h:inputText>
+							<h:message for="pseudo" errorStyle="color:red; display:block" />
 						</div>
 						<div class="form-group">
 							<h:outputLabel>MOT DE PASSE</h:outputLabel>
-							<h:inputText id="password"
-								 class="form-control"
-								placeholder="Saisir votre mot de passe"></h:inputText>
+							<h:inputText id="password" required="true"
+								value="#{connectionController.password}" class="form-control"
+								placeholder="Saisir votre mot de passe">
+								<f:validateRegex pattern="[a-zA-Z]+" />
+							</h:inputText>
+							<h:message for="password" errorStyle="color:red; display:block" />
 						</div>
 						<h:commandButton class="btn btn-primary btnConnexion"
-							value="Connexion" action="#{connectionController.traitementConnection}"></h:commandButton>
+							value="Connexion"
+							action="#{connectionController.traitementConnection}"></h:commandButton>
 					</h:form>
 				</div>
 			</div>

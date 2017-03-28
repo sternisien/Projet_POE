@@ -63,7 +63,7 @@ public class JoueurController implements Serializable {
 		
 		this.lstNation = new ArrayList<Nation>();
 		this.lstJoueur = new ArrayList<Joueur>();
-
+		
 		setTitle("Enregistrement d'un nouveau joueur");
 		setDescription("Enregistrer un nouveau joueur en indiquant son nom, son prénom," + "son sexe et sa nationalité.");
 		setEntete("Liste des joueurs");
@@ -196,10 +196,10 @@ public class JoueurController implements Serializable {
 	}
 
 	public String traitementJoueur() {
-		
+		this.listErrorMsg = new ArrayList<String>();
 		if (Sexe.HOMME.toString().equals(sexe) || Sexe.FEMME.toString().equals(sexe)) {
 			try {
-				gestionJoueur.ajoutJoueur(this.nom, this.prenom, this.lstNation.get(this.indexNation), this.sexe);
+				gestionJoueur.ajoutJoueur(this.nom, this.prenom, lstNation.get(this.indexNation), this.sexe);
 			} catch (JobException jobEx) {
 				this.listErrorMsg.add(jobEx.getMessage());
 			}

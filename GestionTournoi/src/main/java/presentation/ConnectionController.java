@@ -59,7 +59,6 @@ public class ConnectionController implements Serializable {
 	public String traitementConnection() {
 		
 		//TODO
-		/*
 		Boolean isAuthorized = false;
 		
 		isAuthorized = gestionOrganisateur.connection(this.pseudo, this.password);
@@ -68,9 +67,8 @@ public class ConnectionController implements Serializable {
 			return "ressources/home";
 		} else {
 			return "connection";
-		}*/
+		}
 		
-		return "ressources/home";
 	}
 	
 	public String deconnection() {

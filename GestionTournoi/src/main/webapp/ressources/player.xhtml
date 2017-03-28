@@ -25,29 +25,16 @@
 	<ui:include src="nav.xhtml"></ui:include>
 	<div class="container">
 		<div class="row">
+			<div  class="col-md-12" style="margin-top: 70px; margin-bottom:-70px;">
+				<c:forEach var="msg" items="#{joueurController.listErrorMsg}">
+					<span class="alert alert-danger col-md-12"><strong>ERREUR !</strong>${msg}</span>
+				</c:forEach>
+			</div>
 			<div class="col-md-8">
 				<div class="jumbotron">
 					<h1>#{joueurController.title}</h1>
 					<p>#{joueurController.description}</p>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th class="entete">#{joueurController.entete}</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="joueur" items="#{joueurController.lstJoueur}">
-							<tr>
-								<td>${joueur.nom}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-			<div class="col-md-8">
 				<h:form>
 					<div class="form-group">
 						<h:outputLabel>Nom</h:outputLabel>
@@ -57,7 +44,7 @@
 							placeholder="Nom">
 							<f:validateRegex pattern="[a-zA-Z]+" />
 						</h:inputText>
-						<h:message for="nom" errorStyle="color:red; display:block"/>
+						<h:message for="nom" errorStyle="color:red; display:block" />
 					</div>
 					<div class="form-group">
 						<h:outputLabel>Prenom</h:outputLabel>
@@ -66,7 +53,7 @@
 							value="#{joueurController.prenom}" placeholder="Prenom">
 							<f:validateRegex pattern="[a-zA-Z]+" />
 						</h:inputText>
-						<h:message for="prenom" errorStyle="color:red; display:block"/>
+						<h:message for="prenom" errorStyle="color:red; display:block" />
 					</div>
 					<div class="form-group">
 						<h:outputLabel>Sexe</h:outputLabel>
@@ -89,12 +76,28 @@
 							</c:forEach>
 						</h:selectOneMenu>
 					</div>
-					<h:commandButton class="btn btn-primary" value="Enregistrer"
-						action="#{joueurController.traitementJoueur}"></h:commandButton>
+					<h:commandButton class="btn btn-primary btnSave"
+						value="Enregistrer" action="#{joueurController.traitementJoueur}"></h:commandButton>
 				</h:form>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered table-fixed">
+					<thead>
+						<tr>
+							<th class="entete">#{joueurController.entete}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="joueur" items="#{joueurController.lstJoueur}">
+							<tr>
+								<td>Nom:${joueur.nom} Prenom:${joueur.prenom}
+									Sexe:${joueur.sexe} Nation:${joueur.nation.libelle}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 </h:body>
-
 </html>
